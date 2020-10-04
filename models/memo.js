@@ -2,8 +2,8 @@
 // const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const memo = sequelize.define(
-    "memo",
+  const memos = sequelize.define(
+    "memos",
     {
       writer: DataTypes.STRING,
       contents: DataTypes.STRING,
@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  memo.associate = function (models) {
+  memos.associate = function (models) {
     // associations can be defined here
   };
-  return memo;
+  return memos;
 };
 
 // module.exports = (sequelize, DataTypes) => {

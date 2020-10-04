@@ -11,10 +11,10 @@ router.post("/signin", usersController.signin.post);
 
 router.get("/getinfo", usersController.getinfo.get);
 
+router.post("/signout", usersController.signout.post);
+
 // router.get("/getinfo", (req, res) => {
 //   res.json({ info: null });
 // });
-
-router.post("/signout", usersController.signout.post);
 
 module.exports = router;
