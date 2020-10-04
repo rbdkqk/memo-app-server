@@ -5,6 +5,8 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan"); // 로그 관리를 위한 미들웨어. (토큰도 가능한듯?)
 const bodyParser = require("body-parser"); // 요청에서 JSON을 파싱할때 사용되는 미들웨어
 
+const api = require("./routes");
+
 /* 이상 모듈 목록 */
 
 const app = express();
@@ -51,6 +53,13 @@ app.get("/", (req, res) => {
 
 app.get("/hello", (req, res) => {
   return res.send("Hello CodeLab");
+});
+
+app.use("/api", api); // http://URL/api/account/signup 이런식으로 api 를 사용 할 수 있게 됩니다
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
 });
 
 app.listen(port, () => {
