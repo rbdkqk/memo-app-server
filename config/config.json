@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "4202",
+    "database": "memoapp",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "4202",
+    "database": "memoapp",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "4202",
+    "database": "memoapp",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
