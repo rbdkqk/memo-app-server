@@ -11,9 +11,9 @@ router.post("/signin", usersController.signin.post);
 
 router.get("/getinfo", usersController.getinfo.get);
 
-router.get("/getinfo", (req, res) => {
-  res.json({ info: null });
-});
+// router.get("/getinfo", (req, res) => {
+//   res.json({ info: null });
+// });
 
 router.post("/signout", usersController.signout.post);
 

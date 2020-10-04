@@ -5,8 +5,11 @@ module.exports = {
     req.session.destroy((err) => {
       if (err) throw err;
     });
-    res.redirect("/");
-    return res.json({ sucess: true });
+    // res.redirect("/"); // 이 부분이 살아있으면 postman에서 제대로 잡아내지 못함. 리디렉트 기능은 작동은 할 것 같다. 나중에 되살리기.
+    return res.json(
+      { success: true }
+      // "로그아웃 성공"
+    );
     // res.end();
   },
 };
