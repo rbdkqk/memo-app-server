@@ -7,10 +7,10 @@ const { memosController } = require("../controller/index");
 
 router.post("/", memosController.memopost.post);
 
-// router.get("/", memosController.signup.get);
+router.get("/", memosController.memoread.get);
 
-// router.put("/:id", memosController.signin.put);
+router.put("/:id", memosController.memoupdate.put);
 
-// router.delete("/:id", memosController.getinfo.delete);
+router.delete("/:id", memosController.memodelete.delete);
 
 module.exports = router;
