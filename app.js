@@ -57,6 +57,10 @@ app.get("/hello", (req, res) => {
 
 app.use("/api", api); // http://URL/api/account/signup 이런식으로 api 를 사용 할 수 있게 됩니다
 
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./../public/index.html"));
+});
+
 app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).send("Something broke!");
