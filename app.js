@@ -15,9 +15,9 @@ const port = 4000;
 
 app.use(
   session({
-    secret: "@rbdkqk",
-    resave: false,
-    saveUninitialized: true,
+    secret: "@rbdkqk", // 암호화하는 데 쓰일 키
+    resave: false, // 세션을 언제나 저장할지 설정함
+    saveUninitialized: true, // 세션이 저장되기 전 uninitialized 상태로 미리 만들어 저장
   })
 );
 
@@ -42,7 +42,7 @@ const corsOptions = {
 app.use(
   cors({
     origin: ["http://localhost:3000"],
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
@@ -57,9 +57,9 @@ app.get("/hello", (req, res) => {
 
 app.use("/api", api); // http://URL/api/account/signup 이런식으로 api 를 사용 할 수 있게 됩니다
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./../public/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "./../public/index.html"));
+// });
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);

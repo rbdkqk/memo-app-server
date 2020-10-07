@@ -14,6 +14,8 @@ module.exports = {
 
     // ERROR CODES 1: NOT LOGGED IN
     // CHECK LOGIN STATUS - 세션확인 (로그인 여부 확인)
+    console.log(req.session);
+    console.log(req.body);
     if (typeof req.session.loginInfo === "undefined") {
       return res.status(403).json({
         error: "NOT LOGGED IN",
