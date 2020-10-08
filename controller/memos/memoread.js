@@ -12,9 +12,11 @@ module.exports = {
         return b.dataValues.id - a.dataValues.id;
       });
 
-      let memos = result.slice(0, 6);
+      // let memos = result.slice(0, 6);
 
-      res.status(200).json(memos);
+      // 6개씩 잘라서 스크롤 내릴때마다 6개씩 추가 렌더링되게 하고 싶었는데,
+      // 실패했으니(morememo) 그냥 전부 다 렌더링함
+      res.status(200).json(result);
     });
     // res.end();
   },

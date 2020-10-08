@@ -3,4 +3,5 @@ module.exports = {
   memoread: require("./memoread"),
   memodelete: require("./memodelete"),
   memoupdate: require("./memoupdate"),
+  morememo: require("./morememo"),
 };
